@@ -3,15 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Api", "Blog.Api\Blog.Api.csproj", "{9231F164-44C4-42B6-AD50-582985B1628A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Api", "Blog.Api\Blog.Api.csproj", "{9231F164-44C4-42B6-AD50-582985B1628A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Application", "Blog.Application\Blog.Application.csproj", "{42FBA09A-31F4-4A38-9888-27B1A3076546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Application", "Blog.Application\Blog.Application.csproj", "{42FBA09A-31F4-4A38-9888-27B1A3076546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Domain", "Blog.Domain\Blog.Domain.csproj", "{46C792FE-E01B-402A-81E9-D72913FAC7B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Domain", "Blog.Domain\Blog.Domain.csproj", "{46C792FE-E01B-402A-81E9-D72913FAC7B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Persistence", "Blog.Persistence\Blog.Persistence.csproj", "{E5A2FD7B-0252-4F40-9AB7-6ABA558CE44A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Persistence", "Blog.Persistence\Blog.Persistence.csproj", "{E5A2FD7B-0252-4F40-9AB7-6ABA558CE44A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Infrastructure", "Blog.Infrastructure\Blog.Infrastructure.csproj", "{94B04413-C750-4277-B06D-9FCCDC9530F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Infrastructure", "Blog.Infrastructure\Blog.Infrastructure.csproj", "{94B04413-C750-4277-B06D-9FCCDC9530F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{B505DDBB-E9E4-4687-9685-84058C16CFE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0786BA2E-171F-4233-BD8B-EDD5A30B6513}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E2184092-1106-4688-AAA6-D073A025E136}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B8BCB13B-C019-4AD1-9818-D7E14E270703}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{91AC19C7-6A15-4E6F-87AF-132C8912273B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +52,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9231F164-44C4-42B6-AD50-582985B1628A} = {B505DDBB-E9E4-4687-9685-84058C16CFE6}
+		{42FBA09A-31F4-4A38-9888-27B1A3076546} = {0786BA2E-171F-4233-BD8B-EDD5A30B6513}
+		{46C792FE-E01B-402A-81E9-D72913FAC7B5} = {0786BA2E-171F-4233-BD8B-EDD5A30B6513}
+		{E5A2FD7B-0252-4F40-9AB7-6ABA558CE44A} = {E2184092-1106-4688-AAA6-D073A025E136}
+		{94B04413-C750-4277-B06D-9FCCDC9530F3} = {E2184092-1106-4688-AAA6-D073A025E136}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08F120BF-259F-440F-850C-F154C074C6D8}
