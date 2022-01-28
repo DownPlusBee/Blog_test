@@ -18,7 +18,7 @@ namespace Blog.Infrastructure.Mail
 
         public async Task<bool> SendEmail(Email email)
         {
-            SendGridClient client = new("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");
+            SendGridClient client = new("");
 
             string subject = email.Subject;
             EmailAddress to = new(email.To);
