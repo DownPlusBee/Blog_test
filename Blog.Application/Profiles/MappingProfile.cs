@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Blog.Application.Features.BlogPosts.Commands.CreateBlogPost;
-using Blog.Application.Features.BlogPosts.Queries;
+using Blog.Application.Features.BlogPosts.Queries.GetBlogPostList;
 using Blog.Domain.Entities;
 
 namespace Blog.Application.Profiles

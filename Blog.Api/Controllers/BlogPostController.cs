@@ -1,5 +1,5 @@
 ﻿using Blog.Application.Features.BlogPosts.Commands.CreateBlogPost;
-using Blog.Application.Features.BlogPosts.Queries;
+using Blog.Application.Features.BlogPosts.Queries.GetBlogPostList;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +23,7 @@ namespace Blog.Api.Controllers
         [HttpGet(Name = "All")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<List<BlogPostVM>>> GetAllBlogPosts([FromQuery] int offset = 1, int limit = 50, string sortby = "", string sort = "")
+        public async Task<ActionResult<List<BlogPostListVM>>> GetAllBlogPosts([FromQuery] int offset = 1, int limit = 50, string sortby = "", string sort = "")
         {
             GetBlogPostsListQuery blogPostsForQuery = new() { Offset = offset, Limit = limit, SortBy = sortby, Sort = sort };
 
@@ -33,7 +33,7 @@ namespace Blog.Api.Controllers
         }
 
         [HttpGet("{id}", Name = "GetEventById")]
-        public async Task<ActionResult<EventDetailVm>> GetEventById(Guid id)
+        public async Task<ActionResult<>> GetEventById(Guid id)
         {
 
         }

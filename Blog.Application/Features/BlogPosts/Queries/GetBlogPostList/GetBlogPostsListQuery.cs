@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using System.Collections.Generic;
 
-namespace Blog.Application.Features.BlogPosts.Queries
+namespace Blog.Application.Features.BlogPosts.Queries.GetBlogPostList
 {
-    public class GetBlogPostsListQuery : IRequest<List<BlogPostVM>>
+    public class GetBlogPostsListQuery : IRequest<List<BlogPostListVM>>
     {
         public int Offset { get; set; }
 

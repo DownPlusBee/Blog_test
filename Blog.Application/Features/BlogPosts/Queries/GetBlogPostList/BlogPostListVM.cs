@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blog.Application.Features.BlogPosts.Queries
+namespace Blog.Application.Features.BlogPosts.Queries.GetBlogPostList
 {
-    public class BlogPostVM
+    public class BlogPostListVM
     {
         public Guid Id { get; set; }
 

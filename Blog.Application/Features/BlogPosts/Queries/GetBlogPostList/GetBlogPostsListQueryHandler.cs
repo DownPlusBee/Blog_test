@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Blog.Application.Features.BlogPosts.Queries
+namespace Blog.Application.Features.BlogPosts.Queries.GetBlogPostList
 {
-    public class GetBlogPostsListQueryHandler : IRequestHandler<GetBlogPostsListQuery, List<BlogPostVM>>
+    public class GetBlogPostsListQueryHandler : IRequestHandler<GetBlogPostsListQuery, List<BlogPostListVM>>
     {
         private readonly IBlogPostRepository _repo;
         private readonly IMapper _mapper;
@@ -19,12 +19,12 @@ namespace Blog.Application.Features.BlogPosts.Queries
             _mapper = mapper;
         }
 
-        public async Task<List<BlogPostVM>> Handle(GetBlogPostsListQuery request, CancellationToken cancellationToken)
+        public async Task<List<BlogPostListVM>> Handle(GetBlogPostsListQuery request, CancellationToken cancellationToken)
         {
 
-            List<BlogPost> blogPosts = (await _repo.ListAllAsync(request.Offset, request.Limit, request.SortBy, request.Sort));
+            List<BlogPost> blogPosts = await _repo.ListAllAsync(request.Offset, request.Limit, request.SortBy, request.Sort);
 
-            return _mapper.Map<List<BlogPostVM>>(blogPosts);
+            return _mapper.Map<List<BlogPostListVM>>(blogPosts);
         }
     }
 }
