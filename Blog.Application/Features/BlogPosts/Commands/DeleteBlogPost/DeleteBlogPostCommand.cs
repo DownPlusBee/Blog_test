@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using System;
 
 namespace Blog.Application.Features.BlogPosts.Commands.DeleteBlogPost
 {
-    public class DeleteBlogPostCommand
+    public class DeleteBlogPostCommand : IRequest
     {
         public Guid BlogPostId { get; set; }
     }

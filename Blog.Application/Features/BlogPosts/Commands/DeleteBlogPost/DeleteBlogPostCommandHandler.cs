@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Blog.Application.Interfaces.Persistance;
+﻿using Blog.Application.Interfaces.Persistance;
 using Blog.Domain.Entities;
 using MediatR;
 using System.Threading;
@@ -10,11 +9,9 @@ namespace Blog.Application.Features.BlogPosts.Commands.DeleteBlogPost
     public class DeleteBlogPostCommandHandler : IRequestHandler<DeleteBlogPostCommand>
     {
         private readonly IAsyncRepository<BlogPost> _blogPostRepository;
-        private readonly IMapper _mapper;
 
-        public DeleteBlogPostCommandHandler(IMapper mapper, IAsyncRepository<BlogPost> blogPostRepository)
+        public DeleteBlogPostCommandHandler(IAsyncRepository<BlogPost> blogPostRepository)
         {
-            _mapper = mapper;
             _blogPostRepository = blogPostRepository;
         }
 
