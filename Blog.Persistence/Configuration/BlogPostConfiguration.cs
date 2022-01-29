@@ -30,6 +30,8 @@ namespace Blog.Persistence.Configuration
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
+            builder.Property(e => e.LastModifiedDate).HasColumnType("datetime");
+
         }
     }
 }

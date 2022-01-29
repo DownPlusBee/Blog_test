@@ -17,5 +17,7 @@ namespace Blog.Application.Features.BlogPosts.Queries.GetBlogPostList
         public string CreatedBy { get; set; }
 
         public DateTime CreatedDate { get; set; }
+
+        public DateTime LastModifiedDate { get; set; }
     }
 }
