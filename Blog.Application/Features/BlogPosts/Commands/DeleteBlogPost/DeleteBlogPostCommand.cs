@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Blog.Application.Features.BlogPosts.Commands.DeleteBlogPost
 {
-    public class DeleteEventCommand
+    public class DeleteBlogPostCommand
     {
-        public Guid EventId { get; set; }
+        public Guid BlogPostId { get; set; }
     }
 }
