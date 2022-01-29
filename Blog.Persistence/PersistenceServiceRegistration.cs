@@ -14,7 +14,7 @@ namespace Blog.Persistence
         {
             services.AddDbContext<BlogContext>(options => options.UseSqlite($"Data Source={GetDatabasePath()}"));
 
-            services.AddScoped(typeof(ISortHelper<>), typeof(SortHelper<>));
+            services.AddScoped(typeof(Application.Interfaces.Persistance.ISortHelper<>), typeof(SortHelper<>));
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IBlogPostRepository, BlogPostRepository>();
 
