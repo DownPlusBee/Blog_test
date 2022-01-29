@@ -32,6 +32,7 @@ namespace Blog.Api.Controllers
         }
 
         [HttpPost("add")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<CreateBlogPostCommand>> Create([FromBody] CreateBlogPostCommand createBlogPostCommand)
         {
             Guid response = await _mediator.Send(createBlogPostCommand);
