@@ -19,19 +19,16 @@ namespace Blog.Application.Features.BlogPosts.Queries.GetBlogPostDetail
         }
 
 
-        public Task<BlogPostDetailVM> Handle(GetBlogPostDetailQuery request, CancellationToken cancellationToken)
+        public async Task<BlogPostDetailVM> Handle(GetBlogPostDetailQuery request, CancellationToken cancellationToken)
         {
-            var @event = await _blogPostRepository.GetByIdAsync(request.Id);
+            var @blogPost = await _blogPostRepository.GetByIdAsync(request.Id);
 
-            var eventDetailDto = _mapper.Map<BlogPostDetailVM>(@event);
-
-            if (category == null)
-            {
-                throw new NotFoundException(nameof(Event), request.Id);
+            if (@blogPost == null)
+            { 
+                //throw new NotFoundException()
             }
-            eventDetailDto.Category = _mapper.Map<CategoryDto>(category);
 
-            return eventDetailDto;
+            return _mapper.Map<BlogPostDetailVM>(@blogPost);
         }
     }
 }

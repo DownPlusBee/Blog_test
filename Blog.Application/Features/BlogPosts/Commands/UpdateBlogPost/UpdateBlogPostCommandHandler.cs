@@ -36,9 +36,9 @@ namespace Blog.Application.Features.BlogPosts.Commands.UpdateBlogPost
             var validationResult = await validator.ValidateAsync(request);
 
             if (validationResult.Errors.Count > 0)
-                throw new ValidationException(validationResult);
+                //throw new ValidationException(validationResult);
 
-            _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
+           // _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
 
             await _blogPostRepository.UpdateAsync(eventToUpdate);
 
