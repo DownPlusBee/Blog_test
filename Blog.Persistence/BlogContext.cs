@@ -44,6 +44,10 @@ namespace Blog.Persistence
                         entry.Entity.CreatedDate = DateTime.Now;
                         entry.Entity.Id = Guid.NewGuid();
                         break;
+
+                    case EntityState.Modified:
+                        entry.Entity.LastModifiedDate = DateTime.Now;
+                        break;
                 }
             }
             return base.SaveChangesAsync(cancellationToken);
