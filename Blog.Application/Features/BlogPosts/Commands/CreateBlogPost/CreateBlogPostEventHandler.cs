@@ -8,7 +8,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Blog.Application.Features.BlogPosts.Commands
+namespace Blog.Application.Features.BlogPosts.Commands.CreateBlogPost
 {
     public class CreateBlogPostEventHandler : IRequestHandler<CreateBlogPostCommand, Guid>
     {
@@ -30,7 +30,7 @@ namespace Blog.Application.Features.BlogPosts.Commands
 
             if (validationResult.Errors.Count > 0)
             {
-               // throw Exceptions do some logging.
+                // throw Exceptions do some logging.
             }
 
             BlogPost @blogPost = _mapper.Map<BlogPost>(request);

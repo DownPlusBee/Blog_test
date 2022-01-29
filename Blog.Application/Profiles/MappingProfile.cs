@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Blog.Application.Features.BlogPosts.Commands;
+using Blog.Application.Features.BlogPosts.Commands.CreateBlogPost;
 using Blog.Application.Features.BlogPosts.Queries;
 using Blog.Domain.Entities;
 
