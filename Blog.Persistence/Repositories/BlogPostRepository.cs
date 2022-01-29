@@ -11,9 +11,9 @@ namespace Blog.Persistence.Repositories
 {
     public class BlogPostRepository : BaseRepository<BlogPost>, IBlogPostRepository
     {
-        private ISortHelper<BlogPost> _sortHelper;
+        private Application.Interfaces.Persistance.ISortHelper<BlogPost> _sortHelper;
 
-        public BlogPostRepository(BlogContext dbContext, ISortHelper<BlogPost> sortHelper) : base(dbContext)
+        public BlogPostRepository(BlogContext dbContext, Application.Interfaces.Persistance.ISortHelper<BlogPost> sortHelper) : base(dbContext)
         {
             _sortHelper = sortHelper;
         }
