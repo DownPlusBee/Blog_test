@@ -8,5 +8,6 @@ namespace Blog.Application.Features.BlogPosts.Commands.DeleteBlogPost
 {
     public class DeleteEventCommand
     {
+        public Guid EventId { get; set; }
     }
 }

@@ -27,15 +27,9 @@ namespace Blog.Api.Controllers
         {
             GetBlogPostsListQuery blogPostsForQuery = new() { Offset = offset, Limit = limit, SortBy = sortby, Sort = sort };
 
-            List<BlogPostVM> blogPosts = await _mediator.Send(blogPostsForQuery);
+            List<BlogPostListVM> blogPosts = await _mediator.Send(blogPostsForQuery);
 
             return Ok(blogPosts);
-        }
-
-        [HttpGet("{id}", Name = "GetEventById")]
-        public async Task<ActionResult<>> GetEventById(Guid id)
-        {
-
         }
 
         [HttpPost("add")]
