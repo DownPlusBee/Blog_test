@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Domain.Entities
 {
-    public class BlogPostRemoved
+    internal class BlogPostRemoved
     {
         public int Id { get; set; }
         public int BlogPostId { get; set; }
