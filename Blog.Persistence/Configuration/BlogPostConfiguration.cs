@@ -10,11 +10,15 @@ namespace Blog.Persistence.Configuration
         {
             builder.ToTable("BlogPost");
 
-            builder.Property(e => e.Id).ValueGeneratedNever();
+            builder.Property(e => e.CreatedDate).HasColumnType("date");
+        }
 
+        public void Configure(EntityTypeBuilder<BlogPostContent> builder)
+        {
+            builder.ToTable("BlogPostContent");
             builder.Property(e => e.Body)
                 .IsRequired()
-                .HasMaxLength(600)
+                .HasMaxLength(500)
                 .IsUnicode(false);
 
             builder.Property(e => e.CreatedBy)
@@ -23,15 +27,32 @@ namespace Blog.Persistence.Configuration
                 .IsUnicode(false)
                 .IsFixedLength(true);
 
-            builder.Property(e => e.CreatedDate).HasColumnType("datetime");
+            builder.Property(e => e.ModifiedDate).HasColumnType("date");
 
             builder.Property(e => e.Title)
                 .IsRequired()
-                .HasMaxLength(50)
+                .HasMaxLength(20)
                 .IsUnicode(false);
 
-            builder.Property(e => e.LastModifiedDate).HasColumnType("datetime");
+            builder.HasOne(d => d.BlogPost)
+                .WithMany(p => p.BlogPostContents)
+                .HasForeignKey(d => d.BlogPostId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_BlogPostContents_BlogPost");
+        }
 
+        public void Configure(EntityTypeBuilder<BlogPostRemoved> builder)
+        {
+            builder.ToTable("BlogPostRemoved");
+            builder.ToTable("BlogPostRemoved");
+
+            builder.Property(e => e.RemovedDate).HasColumnType("date");
+
+            builder.HasOne(d => d.BlogPost)
+                .WithMany(p => p.BlogPostRemoveds)
+                .HasForeignKey(d => d.BlogPostId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_BlogPostRemoved_BlogPost");
         }
     }
 }

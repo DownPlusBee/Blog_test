@@ -53,7 +53,12 @@ namespace Blog.Application.Features.BlogPosts.Commands.CreateBlogPost
                 //Log and move on; let the API continue.
             }
 
-            return @blogPost.Id;
+            return Guid.NewGuid(); /*@blogPost.Id;*/
+        }
+
+        public async Task MyVoidAsyncMethod()
+        {
+            await Task.CompletedTask;
         }
     }
 }
